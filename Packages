@@ -1,0 +1,12 @@
+Package: om.bingner.sam_0.1.14-2_iphoneos-arm
+Name: SAM
+Version: 1.14
+Architecture: iphoneos-arm
+Depends: mobilesubstrate, firmware (>= 5.0)
+Filename: debs/com.bingner.sam_0.1.16-1_iphoneos-arm.deb
+Size: 20418
+MD5sum: 69fb7e03156b7c9b585685189cb78329
+SHA1: 550d90baac7364c5b3fb475fb76e80ab5d3c3e67
+SHA256: d1ade0a6b8fe1bdb2069b1002a07968ee4f4c954b07df09ed5e1757207adc31e
+Section: Tweaks
+Description: Allows for fake activation tickets
