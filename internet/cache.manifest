@@ -1,0 +1,9 @@
+CACHE MANIFEST
+# Internet portal
+
+CACHE:
+index.html
+cache.manifest
+
+NETWORK:
+*
