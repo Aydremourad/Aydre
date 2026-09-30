@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# Wikipedia 2007-style webapp
+# 2026-09-30
+
+CACHE:
+index.html
+cache.manifest
+../internet/icons/wikipedia.png
+
+NETWORK:
+*
