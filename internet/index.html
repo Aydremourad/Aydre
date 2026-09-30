@@ -7,15 +7,16 @@
 <meta name="apple-mobile-web-app-title" content="Internet">
 <title>Internet</title>
 <style type="text/css">
-body{margin:0;padding:0;background:#000;color:#fff;font-family:Helvetica,Arial,sans-serif;}
-h1{text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:27px;font-style:italic;font-weight:normal;margin:18px 0 22px 0;color:#fff;text-shadow:0 1px 1px #000;}
+body{margin:0;padding:0;background:#000;color:#fff;font-family:Helvetica,Arial,sans-serif;-webkit-tap-highlight-color:rgba(255,255,255,.15);}
+h1{text-align:center;font-family:Georgia,"Times New Roman",serif;font-size:27px;font-style:italic;font-weight:normal;margin:18px 0 23px 0;color:#fff;text-shadow:0 1px 1px #000;}
 .grid{width:300px;margin:0 auto;}
-a{display:block;text-decoration:none;color:#fff;margin:0 0 14px 0;}
+a{display:block;text-decoration:none;color:#fff;margin:0;padding:0;}
 .row{width:300px;display:table;table-layout:fixed;}
-.cell{display:table-cell;width:100px;text-align:center;vertical-align:top;}
-.icon{width:57px;height:57px;margin:0 auto 5px auto;border:1px solid #111;border-radius:12px;-webkit-border-radius:12px;overflow:hidden;position:relative;background:#000;-webkit-box-shadow:0 2px 4px #000;}
-.icon img{position:absolute;width:57px;height:57px;left:0;top:0;border:0;}
-.label{text-align:center;font-size:14px;font-weight:bold;text-shadow:0 1px #000;}
+.cell{display:table-cell;width:100px;text-align:center;vertical-align:top;padding:0 0 15px 0;}
+.icon{width:57px;height:57px;margin:0 auto 5px auto;border:1px solid #333;border-radius:13px;-webkit-border-radius:13px;overflow:hidden;position:relative;background:#000;-webkit-box-shadow:0 2px 4px #000,inset 0 1px 0 rgba(255,255,255,.25);}
+.icon:before{content:"";position:absolute;left:1px;right:1px;top:1px;height:24px;border-radius:12px 12px 17px 17px;-webkit-border-radius:12px 12px 17px 17px;background:-webkit-gradient(linear,left top,left bottom,from(rgba(255,255,255,.16)),to(rgba(255,255,255,0)));z-index:2;pointer-events:none;}
+.icon img{position:absolute;width:57px;height:57px;left:0;top:0;border:0;z-index:1;}
+.label{text-align:center;font-size:14px;line-height:16px;font-weight:bold;text-shadow:0 1px 2px #000;}
 </style>
 </head>
 <body>
@@ -27,12 +28,14 @@ a{display:block;text-decoration:none;color:#fff;margin:0 0 14px 0;}
 <div class="cell"><a href="https://www.apple.com/"><div class="icon"><img src="icons/apple.png" alt="Apple"></div><div class="label">Apple</div></a></div>
 </div>
 <div class="row">
-<div class="cell"><a href="https://maps.google.com/"><div class="icon"><img src="icons/maps-real.png" alt="Maps"></div><div class="label">Maps</div></a></div>
-<div class="cell"><a href="https://www.youtube.com/"><div class="icon"><img src="icons/youtube-real.png" alt="YouTube"></div><div class="label">YouTube</div></a></div>
-<div class="cell"><a href="https://weather.com/"><div class="icon"><img src="icons/weather-real.png" alt="Weather"></div><div class="label">Weather</div></a></div>
+<div class="cell"><a href="https://maps.google.com/"><div class="icon"><img src="icons/maps.png" alt="Maps"></div><div class="label">Maps</div></a></div>
+<div class="cell"><a href="https://www.youtube.com/"><div class="icon"><img src="icons/youtube.png" alt="YouTube"></div><div class="label">YouTube</div></a></div>
+<div class="cell"><a href="https://weather.com/"><div class="icon"><img src="icons/weather.png" alt="Weather"></div><div class="label">Weather</div></a></div>
 </div>
 <div class="row">
+<div class="cell"></div>
 <div class="cell"><a href="https://aydremourad.github.io/Aydre/smith-2g-webapp/"><div class="icon"><img src="icons/canterbury.png" alt="Canterbury School"></div><div class="label">Canterbury</div></a></div>
+<div class="cell"></div>
 </div>
 </div>
 </body>
