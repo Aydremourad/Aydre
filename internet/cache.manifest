@@ -1,9 +1,15 @@
 CACHE MANIFEST
-# Internet portal v3 - real icons
+# Internet portal v4 - local logos
 
 CACHE:
 index.html
 cache.manifest
+icons/google.svg
+icons/wikipedia.svg
+icons/apple.svg
+icons/maps.svg
+icons/youtube.svg
+icons/weather.svg
 
 NETWORK:
 *
