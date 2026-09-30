@@ -1,15 +1,9 @@
 CACHE MANIFEST
-# Internet portal v6 - period PNG artwork
+# Internet portal - Canterbury icon
 
 CACHE:
 index.html
 cache.manifest
-icons/google.png
-icons/wikipedia.png
-icons/apple.png
-icons/maps-real.png
-icons/youtube-real.png
-icons/weather-real.png
 icons/canterbury.png
 
 NETWORK:
