@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# Canterbury 2G Web App
+
+CACHE:
+index.html
+apple-touch-icon.png
+img/logocolor.png
+
+NETWORK:
+*
