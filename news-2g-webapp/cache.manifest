@@ -1,0 +1,10 @@
+CACHE MANIFEST
+# News 2G webapp
+# 2026-09-30
+
+CACHE:
+index.html
+cache.manifest
+
+NETWORK:
+*
