@@ -1,0 +1,11 @@
+CACHE MANIFEST
+# Apple webapp - original iPhone era style
+# 2026-09-30
+
+CACHE:
+index.html
+cache.manifest
+../internet/icons/apple.png
+
+NETWORK:
+*
