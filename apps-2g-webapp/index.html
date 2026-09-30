@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html manifest="cache.manifest">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Apps">
+<meta charset="UTF-8">
+<title>App Store</title>
+<style type="text/css">
+html,body{margin:0;padding:0;background:#000;color:#fff;font-family:Helvetica,Arial,sans-serif;font-size:14px;}
+body{min-height:100%;padding-bottom:49px;}
+#topbar{height:44px;line-height:44px;text-align:center;font-size:20px;font-weight:bold;text-shadow:0 -1px #000;background:-webkit-gradient(linear,left top,left bottom,from(#5b86ad),color-stop(.5,#315d86),color-stop(.51,#244d75),to(#1c4165));border-bottom:1px solid #111;}
+#switch{width:285px;height:27px;margin:9px auto 8px auto;display:table;border:1px solid #0d263d;border-radius:5px;-webkit-border-radius:5px;overflow:hidden;background:#183b5d;}
+.switchBtn{display:table-cell;width:50%;text-align:center;vertical-align:middle;font-size:12px;font-weight:bold;color:#d8e6f3;text-shadow:0 -1px #19344e;background:-webkit-gradient(linear,left top,left bottom,from(#4b79a4),to(#285577));border-right:1px solid #173653;}
+.switchBtn:last-child{border-right:0;}
+.switchBtn.active{color:#fff;background:-webkit-gradient(linear,left top,left bottom,from(#173f68),to(#0b2847));}
+#content{width:320px;margin:0 auto;}
+.sectionTitle{height:29px;line-height:29px;padding-left:10px;font-size:13px;font-weight:bold;color:#ddd;background:-webkit-gradient(linear,left top,left bottom,from(#4e4e4e),to(#272727));border-top:1px solid #777;border-bottom:1px solid #111;text-shadow:0 1px #000;}
+.list{margin:0;padding:0;list-style:none;}
+.item{height:69px;border-bottom:1px solid #222;background:-webkit-gradient(linear,left top,left bottom,from(#ececec),to(#c6c6c6));color:#111;position:relative;}
+.item:active{background:#aaa;}
+.itemIcon{position:absolute;left:10px;top:7px;width:54px;height:54px;line-height:54px;text-align:center;border:1px solid #777;border-radius:10px;-webkit-border-radius:10px;font-size:25px;font-weight:bold;color:#fff;background:#222;overflow:hidden;text-shadow:0 1px #000;}
+.itemText{position:absolute;left:76px;right:62px;top:9px;}
+.itemName{font-size:15px;font-weight:bold;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.itemDeveloper{font-size:11px;color:#555;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.stars{font-size:12px;color:#e06722;margin-top:3px;letter-spacing:-1px;}
+.price{position:absolute;right:12px;top:26px;font-size:12px;color:#222;font-weight:bold;}
+.arrow{position:absolute;right:5px;top:27px;color:#666;font-size:19px;}
+#detail{display:none;background:#efefef;color:#111;min-height:360px;}
+.detailHead{padding:12px 12px 10px 12px;border-bottom:1px solid #999;background:-webkit-gradient(linear,left top,left bottom,from(#f8f8f8),to(#d8d8d8));}
+.detailIcon{float:left;width:72px;height:72px;line-height:72px;margin-right:10px;border:1px solid #777;border-radius:12px;-webkit-border-radius:12px;text-align:center;font-size:31px;font-weight:bold;color:#fff;background:#222;}
+.detailName{font-size:19px;font-weight:bold;margin-top:4px;}
+.detailDev{font-size:12px;color:#555;margin-top:4px;}
+.detailPrice{margin-top:10px;display:inline-block;padding:4px 10px;border:1px solid #777;border-radius:4px;-webkit-border-radius:4px;background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#cfcfcf));font-weight:bold;font-size:12px;}
+.detailBody{padding:12px;clear:both;}
+.detailBody h2{font-size:15px;margin:0 0 6px 0;}
+.detailBody p{font-size:13px;line-height:18px;margin:0 0 12px 0;}
+.backBtn{display:block;margin:10px 12px;padding:8px;text-align:center;border:1px solid #777;border-radius:5px;-webkit-border-radius:5px;background:-webkit-gradient(linear,left top,left bottom,from(#fff),to(#ccc));color:#111;font-weight:bold;}
+#searchView{display:none;background:#efefef;color:#111;padding:12px;min-height:300px;}
+#searchBox{width:100%;height:31px;font-size:16px;padding:3px 7px;box-sizing:border-box;-webkit-box-sizing:border-box;border:1px solid #777;border-radius:4px;-webkit-border-radius:4px;}
+#searchResults{margin-top:10px;}
+.catRow{height:39px;line-height:39px;padding:0 12px;border-bottom:1px solid #aaa;background:-webkit-gradient(linear,left top,left bottom,from(#f7f7f7),to(#d2d2d2));color:#111;font-weight:bold;}
+.tabbar{position:fixed;left:0;right:0;bottom:0;height:48px;border-top:1px solid #555;background:-webkit-gradient(linear,left top,left bottom,from(#2b2b2b),to(#050505));z-index:20;}
+.tab{display:table-cell;width:20%;height:48px;text-align:center;vertical-align:middle;color:#ddd;font-size:9px;text-shadow:0 -1px #000;}
+.tabIcon{display:block;font-size:19px;line-height:21px;color:#aaa;}
+.tab.active{color:#fff;}
+.tab.active .tabIcon{color:#fff;}
+</style>
+<script type="text/javascript">
+var apps = [
+ {name:"Facebook",dev:"Facebook Inc.",price:"FREE",icon:"f",desc:"Classic early iPhone social networking client. A representative app from the first App Store era."},
+ {name:"AIM",dev:"AOL",price:"FREE",icon:"A",desc:"The classic AOL instant messaging client for early iPhone OS."},
+ {name:"eBay Mobile",dev:"eBay Inc.",price:"FREE",icon:"e",desc:"Early mobile eBay browsing and shopping experience."},
+ {name:"Enigmo",dev:"Pangea Software",price:"$9.99",icon:"E",desc:"A physics puzzle game from the early App Store era."},
+ {name:"PAC-MAN",dev:"NAMCO",price:"$9.99",icon:"P",desc:"Classic arcade game adapted for iPhone."},
+ {name:"The New York Times",dev:"The New York Times",price:"FREE",icon:"N",desc:"Early mobile news application."},
+ {name:"MLB At Bat",dev:"MLB",price:"$0.99",icon:"M",desc:"An early sports application from the first App Store generation."},
+ {name:"Tap Tap Revenge",dev:"Tapulous",price:"$0.99",icon:"T",desc:"An early iPhone rhythm game from the App Store's first era."}
+];
+
+function showView(id){
+  document.getElementById("featured").style.display="none";
+  document.getElementById("categories").style.display="none";
+  document.getElementById("top25").style.display="none";
+  document.getElementById("searchView").style.display="none";
+  document.getElementById("updates").style.display="none";
+  document.getElementById("detail").style.display="none";
+  document.getElementById(id).style.display="block";
+}
+function setTab(name){
+  var tabs=document.getElementsByClassName("tab");
+  for(var i=0;i<tabs.length;i++){tabs[i].className="tab";}
+  document.getElementById("tab-"+name).className="tab active";
+  showView(name=="top25"?"top25":name);
+}
+function renderList(target, list){
+  var el=document.getElementById(target), html="";
+  for(var i=0;i<list.length;i++){
+    html += '<li class="item" onclick="openApp('+i+')">'+
+      '<div class="itemIcon">'+list[i].icon+'</div>'+
+      '<div class="itemText"><div class="itemName">'+list[i].name+'</div>'+
+      '<div class="itemDeveloper">'+list[i].dev+'</div>'+
+      '<div class="stars">★★★★★</div></div>'+
+      '<div class="price">'+list[i].price+'</div><div class="arrow">›</div></li>';
+  }
+  el.innerHTML=html;
+}
+function openApp(index){
+  var a=apps[index];
+  document.getElementById("detail").innerHTML=
+    '<div class="detailHead"><div class="detailIcon">'+a.icon+'</div>'+
+    '<div class="detailName">'+a.name+'</div><div class="detailDev">'+a.dev+'</div>'+
+    '<div class="detailPrice">'+a.price+'</div><div style="clear:both"></div></div>'+
+    '<div class="detailBody"><h2>About</h2><p>'+a.desc+'</p><h2>iPhone</h2><p>Designed in the style of the original iPhone App Store era.</p></div>'+
+    '<a class="backBtn" href="javascript:backToFeatured()">Back to Featured</a>';
+  showView("detail");
+}
+function backToFeatured(){
+  document.getElementById("tab-featured").className="tab active";
+  showView("featured");
+}
+function doSearch(){
+  var q=document.getElementById("searchBox").value.toLowerCase(), html="";
+  for(var i=0;i<apps.length;i++){
+    if(apps[i].name.toLowerCase().indexOf(q)>=0 || apps[i].dev.toLowerCase().indexOf(q)>=0){
+      html += '<div class="catRow" onclick="openApp('+i+')">'+apps[i].name+' <span style="float:right;color:#777">›</span></div>';
+    }
+  }
+  if(!html){html='<div style="padding:10px;color:#555;">No applications found.</div>';}
+  document.getElementById("searchResults").innerHTML=html;
+}
+window.onload=function(){
+  renderList("featuredList",apps.slice(0,6));
+  renderList("top25List",apps);
+  showView("featured");
+  document.getElementById("tab-featured").className="tab active";
+};
+</script>
+</head>
+<body>
+<div id="topbar">App Store</div>
+<div id="featured">
+  <div id="switch"><div class="switchBtn active">New</div><div class="switchBtn">What's Hot</div></div>
+  <div class="sectionTitle">Featured</div>
+  <ul class="list" id="featuredList"></ul>
+</div>
+
+<div id="categories">
+  <div class="sectionTitle">Categories</div>
+  <div class="catRow">Business <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Education <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Entertainment <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Games <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Lifestyle <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Music <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">News <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Productivity <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Social Networking <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Sports <span style="float:right;color:#777;">›</span></div>
+  <div class="catRow">Utilities <span style="float:right;color:#777;">›</span></div>
+</div>
+
+<div id="top25">
+  <div class="switchBtn" style="display:block;width:auto;margin:8px 12px;text-align:center;padding:6px 0;border:1px solid #777;border-radius:4px;-webkit-border-radius:4px;background:#eee;color:#111;text-shadow:none;">Top Free</div>
+  <div class="sectionTitle">Top 25</div>
+  <ul class="list" id="top25List"></ul>
+</div>
+
+<div id="searchView">
+  <input id="searchBox" type="text" value="" onkeyup="doSearch()" placeholder="Search">
+  <div id="searchResults"></div>
+</div>
+
+<div id="updates">
+  <div class="sectionTitle">Updates</div>
+  <div style="padding:14px;color:#ccc;background:#181818;">No updates available.</div>
+</div>
+
+<div id="detail"></div>
+
+<div class="tabbar">
+  <div id="tab-featured" class="tab active" onclick="setTab('featured')"><span class="tabIcon">★</span>Featured</div>
+  <div id="tab-categories" class="tab" onclick="setTab('categories')"><span class="tabIcon">▦</span>Categories</div>
+  <div id="tab-top25" class="tab" onclick="setTab('top25')"><span class="tabIcon">25</span>Top 25</div>
+  <div id="tab-searchView" class="tab" onclick="setTab('searchView')"><span class="tabIcon">⌕</span>Search</div>
+  <div id="tab-updates" class="tab" onclick="setTab('updates')"><span class="tabIcon">↓</span>Updates</div>
+</div>
+</body>
+</html>
