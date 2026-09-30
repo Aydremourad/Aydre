@@ -1,15 +1,16 @@
 CACHE MANIFEST
-# Internet portal v4 - local logos
+# Internet portal v5 - iPhone 2G PNG icons
 
 CACHE:
 index.html
 cache.manifest
-icons/google.svg
-icons/wikipedia.svg
-icons/apple.svg
-icons/maps.svg
-icons/youtube.svg
-icons/weather.svg
+icons/google.png
+icons/wikipedia.png
+icons/apple.png
+icons/maps.png
+icons/youtube.png
+icons/weather.png
+icons/canterbury.png
 
 NETWORK:
 *
