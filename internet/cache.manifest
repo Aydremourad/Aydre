@@ -1,5 +1,5 @@
 CACHE MANIFEST
-# Internet portal v5 - iPhone 2G PNG icons
+# Internet portal v6 - period PNG artwork
 
 CACHE:
 index.html
@@ -7,9 +7,9 @@ cache.manifest
 icons/google.png
 icons/wikipedia.png
 icons/apple.png
-icons/maps.png
-icons/youtube.png
-icons/weather.png
+icons/maps-real.png
+icons/youtube-real.png
+icons/weather-real.png
 icons/canterbury.png
 
 NETWORK:
