@@ -1,9 +1,15 @@
 CACHE MANIFEST
-# Internet portal - Canterbury icon
+# Internet portal - refreshed icon set
 
 CACHE:
 index.html
 cache.manifest
+icons/google.png
+icons/wikipedia.png
+icons/apple.png
+icons/maps.png
+icons/youtube.png
+icons/weather.png
 icons/canterbury.png
 
 NETWORK:
